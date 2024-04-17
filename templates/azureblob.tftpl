@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "String"
+    },
+    "displayName": {
+      "type": "String"
+    }
+  },
+  "resources": [{
+    "name": "[parameters('name')]",
+    "type": "Microsoft.Web/connections",
+    "location": "[resourceGroup().location]",
+    "apiVersion": "2016-06-01",
+    "kind": "V1",
+    "properties": {
+      "displayName": "[parameters('displayName')]",
+      "parameterValueSet":  {
+         "name": "${authentication_type}",
+         "values": {
+            %{ if authentication_type == "keyBasedAuth" }
+            "accountName": {
+              "value": "${storage_account_name}"
+            },
+            "accessKey": {
+              "value": "${storage_access_key}"
+            }
+            %{ endif }
+            %{ if authentication_type == "servicePrincipalAuth" }
+            "token:clientId": {
+              "value": "${client_id}"
+            },
+            "token:clientSecret": {
+              "value": "${client_secret}"
+            },
+            "token:TenantId": {
+              "value": "${tenant_id}"
+            }
+            %{ endif }
+         }
+       },
+      "api": {
+        "name": "azureblob",
+        "displayName": "Azure Blob Storage",
+        "description": "Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
+        "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1683/1.0.1683.3685/azureblob/icon.png",
+        "brandColor": "#804998",
+        "category": "Standard",
+        "type": "Microsoft.Web/locations/managedApis",
+        "id": "[concat(subscription().id, '/providers/Microsoft.Web/locations/',resourceGroup().location,'/managedApis/azureblob')]"
+      }
+    }
+  }],
+  "outputs": {
+    "connectionId": {
+      "type": "String",
+      "value": "[resourceId('Microsoft.Web/connections', parameters('name'))]"
+    },
+    "managedApiId": {
+      "type": "String",
+      "value": "[reference(resourceId('Microsoft.Web/connections', parameters('name')),'2016-06-01', 'full').properties.api.id]"
+    }
+  }
+}
