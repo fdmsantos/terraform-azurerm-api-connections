@@ -18,9 +18,9 @@ Dynamic Terraform Module to Create Azure API Connections.
 
 ## Module versioning rule
 
-| Module version | AWS Provider version |
-|----------------|----------------------|
-| >= 1.x.x       | => 5.31              |
+| Module version | Azure Provider version |
+|----------------|------------------------|
+| >= 1.x.x       | => 3.22                |
 
 ## Supported Connections
 
@@ -35,7 +35,8 @@ This example creates Api Connection to Azure blob storage using service principa
 
 ```hcl
 module "azureblob" {
-  source                               = "../../"
+  source                               = "fdmsantos/api-connections/azurerm"
+  version                              = "x.x.x"
   api_type                             = "azureblob"
   connection_name                      = "azureblob-1"
   deployment_name                      = "azureblob-deployment"
@@ -52,10 +53,11 @@ module "azureblob" {
 
 ```hcl
 module "sharepointonline" {
-  source                        = "../../"
-  api_type                      = "sharepointonline"
-  resource_group_name           = "<resource_group_name>"
-  connection_display_name       = "Demo Sharepoint Connection"
+  source                  = "fdmsantos/api-connections/azurerm"
+  version                 = "x.x.x"
+  api_type                = "sharepointonline"
+  resource_group_name     = "<resource_group_name>"
+  connection_display_name = "Demo Sharepoint Connection"
 }
 ```
 
