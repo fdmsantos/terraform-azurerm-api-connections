@@ -6,12 +6,19 @@ Dynamic Terraform Module to Create Azure API Connections.
 
 ## Table of Contents
 
+* [Table of Contents](README.md#table-of-contents)
 * [Module versioning rule](README.md#module-versioning-rule)
 * [Supported Connections](README.md#supported-connections)
 * [How to Use](README.md#how-to-use)
-    * [Azure Blob](README.md#azure-blob)
-    * [Sharepoint Online](README.md#sharepoint-online)
+  * [Azure Blob](README.md#azure-blob)
+  * [Sharepoint Online](README.md#sharepoint-online)
 * [Examples](README.md#examples)
+* [Requirements](README.md#requirements)
+* [Providers](README.md#providers)
+* [Modules](README.md#modules)
+* [Resources](README.md#resources)
+* [Inputs](README.md#inputs)
+* [Outputs](README.md#outputs)
 * [Contributing](README.md#contributing)
 * [License](README.md#license)
 

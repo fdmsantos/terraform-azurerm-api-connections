@@ -4,7 +4,7 @@ variable "name" {
 }
 
 variable "location" {
-  description = "Specifies the Azure Region where the logic app should exists. Changing this forces a new resource to be created."
+  description = "Specifies the Azure Region to create api connection. Changing this forces a new resource to be created."
   type        = string
   default     = "westeurope"
 }
