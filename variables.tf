@@ -7,15 +7,29 @@ variable "api_type" {
   }
 }
 
-variable "connection_name" {
-  description = "The Name which should be used for this API Connection. Changing this forces a new API Connection to be created."
+variable "resource_group_name" {
+  description = "Specifies the name of the Resource Group where the logic should exists. Changing this forces a new resource to be created."
+  type        = string
+}
+
+################ Deployment ################
+variable "deployment_name" {
+  description = "The name which should be used for this Resource Group Template Deployment. Changing this forces a new Resource Group Template Deployment to be created."
   type        = string
   default     = null
 }
 
-variable "resource_group_name" {
-  description = "Specifies the name of the Resource Group where the logic should exists. Changing this forces a new resource to be created."
+variable "deployment_tags" {
+  description = "A map of tags to assign to deployment."
+  type        = map(string)
+  default     = {}
+}
+
+################ Connections ################
+variable "connection_name" {
+  description = "The Name which should be used for this API Connection. Changing this forces a new API Connection to be created."
   type        = string
+  default     = null
 }
 
 variable "connection_display_name" {
@@ -24,12 +38,11 @@ variable "connection_display_name" {
   default     = null
 }
 
-variable "deployment_name" {
-  description = "The name which should be used for this Resource Group Template Deployment. Changing this forces a new Resource Group Template Deployment to be created."
-  type        = string
-  default     = null
+variable "connection_tags" {
+  description = "A map of tags to assign to Api Connection."
+  type        = map(string)
+  default     = {}
 }
-
 ################ Azure Blob ################
 variable "azureblob_authentication_type" {
   description = "Specifies Authentication Type for `azureblob` api connection."

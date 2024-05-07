@@ -110,7 +110,9 @@ No modules.
 | <a name="input_azureblob_storage_account_name"></a> [azureblob\_storage\_account\_name](#input\_azureblob\_storage\_account\_name) | Specifies storage account name for `azureblob` api connection. Required when `azureblob_authentication_type` is `Access Key` | `string` | `null` | no |
 | <a name="input_connection_display_name"></a> [connection\_display\_name](#input\_connection\_display\_name) | A display name for this API Connection. Changing this forces a new API Connection to be created. | `string` | `null` | no |
 | <a name="input_connection_name"></a> [connection\_name](#input\_connection\_name) | The Name which should be used for this API Connection. Changing this forces a new API Connection to be created. | `string` | `null` | no |
+| <a name="input_connection_tags"></a> [connection\_tags](#input\_connection\_tags) | A map of tags to assign to Api Connection. | `map(string)` | `{}` | no |
 | <a name="input_deployment_name"></a> [deployment\_name](#input\_deployment\_name) | The name which should be used for this Resource Group Template Deployment. Changing this forces a new Resource Group Template Deployment to be created. | `string` | `null` | no |
+| <a name="input_deployment_tags"></a> [deployment\_tags](#input\_deployment\_tags) | A map of tags to assign to deployment. | `map(string)` | `{}` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Specifies the name of the Resource Group where the logic should exists. Changing this forces a new resource to be created. | `string` | n/a | yes |
 
 ## Outputs

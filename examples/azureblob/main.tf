@@ -10,6 +10,13 @@ module "api_connection_1" {
   resource_group_name           = azurerm_resource_group.this.name
   connection_display_name       = "Demo Azure Blob Logic App Connection - Logic App Managed Identity Auth"
   azureblob_authentication_type = "Logic Apps Managed Identity"
+  connection_tags = {
+    env : "dev"
+    usedBy : "Logic App"
+  }
+  deployment_tags = {
+    env : "dev"
+  }
 }
 
 ###### Authentication: Access Key ######

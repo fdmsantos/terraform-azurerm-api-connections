@@ -7,6 +7,13 @@
     },
     "displayName": {
       "type": "String"
+    },
+    "tags": {
+      "type": "Object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Tags to apply to the Azure Connection."
+      }
     }
   },
   "resources": [{
@@ -15,6 +22,7 @@
     "location": "[resourceGroup().location]",
     "apiVersion": "2016-06-01",
     "kind": "V1",
+    "tags": "[parameters('tags')]",
     "properties": {
       "displayName": "[parameters('displayName')]",
       "parameterValueSet":  {

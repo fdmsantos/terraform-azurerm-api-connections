@@ -10,5 +10,9 @@ resource "azurerm_resource_group_template_deployment" "this" {
     displayName = {
       value = coalesce(var.connection_display_name, var.connection_name, var.api_type)
     }
+    tags = {
+      value = var.connection_tags
+    }
   })
+  tags = var.deployment_tags
 }
