@@ -1,5 +1,6 @@
 locals {
-  connection_name = coalesce(var.connection_name, var.api_type)
+  connection_name         = coalesce(var.connection_name, var.api_type)
+  connection_display_name = coalesce(var.connection_display_name, var.connection_name, var.api_type)
   template = {
     azureblob : templatefile("${path.module}/templates/azureblob.tftpl", local.azureblob_template_parameters[var.azureblob_authentication_type])
     sharepointonline : templatefile("${path.module}/templates/sharepointonline.tftpl", {})

@@ -25,6 +25,15 @@ variable "deployment_tags" {
   default     = {}
 }
 
+variable "deployment_debug_level" {
+  description = "The Debug Level which should be used for this Resource Group Template Deployment. Possible values are none, requestContent, responseContent and BOTH."
+  type        = string
+  default     = null
+  validation {
+    error_message = "Please use a valid value!"
+    condition     = var.deployment_debug_level == null || can(contains(["none", "requestContent", "responseContent", "BOTH"], var.deployment_debug_level))
+  }
+}
 ################ Connections ################
 variable "connection_name" {
   description = "The Name which should be used for this API Connection. Changing this forces a new API Connection to be created."
