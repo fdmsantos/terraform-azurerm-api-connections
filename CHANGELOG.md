@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.1.0...v1.2.0) (2024-05-22)
+
+
+### Features
+
+* Add office365 connection ([3621b13](https://github.com/fdmsantos/terraform-azurerm-api-connections/commit/3621b13044c147d0e526af6f385b7987bb54514a))
+
 ## [1.1.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.0.0...v1.1.0) (2024-05-07)
 
 
