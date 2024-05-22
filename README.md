@@ -31,8 +31,11 @@ Dynamic Terraform Module to Create Azure API Connections.
 
 ## Supported Connections
 
-- Azure Blob (All 4 types of authentication)
-- Sharepoint Online
+| Connection        | Module api_type Parameter | Module api_type Parameter           |
+|-------------------|---------------------------|-------------------------------------|
+| Azure Blob        | azureblob                 | Supports All 4 Authentication Types |
+| Sharepoint Online | sharepointonline          |                                     |
+| Office 365        | office365                 |                                     |
 
 ## How to Use
 
@@ -72,6 +75,7 @@ module "sharepointonline" {
 
 - [azureblob](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/azureblob) - Creates an api connection to azure blob storage.
 - [sharepointonline](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/sharepointonline) - Creates an api connection to sharepoint.
+- [office365](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/office365) - Creates an api connection to Office 365.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
