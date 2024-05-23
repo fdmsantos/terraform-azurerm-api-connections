@@ -5,6 +5,7 @@ locals {
     azureblob : templatefile("${path.module}/templates/azureblob.tftpl", local.azureblob_template_parameters[var.azureblob_authentication_type])
     sharepointonline : templatefile("${path.module}/templates/sharepointonline.tftpl", {})
     office365 : templatefile("${path.module}/templates/office365.tftpl", {})
+    planner : templatefile("${path.module}/templates/planner.tftpl", {})
   }
 
   logic_app_parameters = {

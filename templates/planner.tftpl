@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "String"
+        },
+        "displayName": {
+              "type": "String"
+        },
+        "tags": {
+          "type": "Object",
+          "defaultValue": {},
+          "metadata": {
+            "description": "Tags to apply to the Azure Connection."
+          }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('name')]",
+            "location": "[resourceGroup().location]",
+            "tags": "[parameters('tags')]",
+            "kind": "V1",
+            "properties": {
+                "displayName": "[parameters('displayName')]",
+                "api": {
+                    "name": "planner",
+                    "displayName": "Planner",
+                    "description": "Microsoft Planner lets you easily bring together teams, tasks, documents, and conversations for better results.",
+                    "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/planner/icon.png')]",
+                    "brandColor": "#107c41",
+                    "id": "[concat(subscription().id, '/providers/Microsoft.Web/locations/',resourceGroup().location,'/managedApis/planner')]",
+                    "type": "Microsoft.Web/locations/managedApis"
+                }
+            }
+        }
+    ],
+    "outputs": {
+      "connectionId": {
+        "type": "String",
+        "value": "[resourceId('Microsoft.Web/connections', parameters('name'))]"
+      },
+      "managedApiId": {
+        "type": "String",
+        "value": "[reference(resourceId('Microsoft.Web/connections', parameters('name')),'2016-06-01', 'full').properties.api.id]"
+      }
+    }
+}
