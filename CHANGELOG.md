@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.2.0...v1.3.0) (2024-05-23)
+
+
+### Features
+
+* Add planner api connection ([c58469a](https://github.com/fdmsantos/terraform-azurerm-api-connections/commit/c58469a0e339af6aa4d0d836b5489966681e1a18))
+
 ## [1.2.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.1.0...v1.2.0) (2024-05-22)
 
 
