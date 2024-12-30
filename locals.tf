@@ -6,6 +6,7 @@ locals {
     sharepointonline : templatefile("${path.module}/templates/sharepointonline.tftpl", {})
     office365 : templatefile("${path.module}/templates/office365.tftpl", {})
     planner : templatefile("${path.module}/templates/planner.tftpl", {})
+    outlook : templatefile("${path.module}/templates/outlook.tftpl", {})
   }
 
   logic_app_parameters = {
