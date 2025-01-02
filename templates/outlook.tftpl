@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "String"
+    },
+    "displayName": {
+      "type": "String"
+    },
+    "tags": {
+      "type": "Object",
+      "defaultValue": {},
+      "metadata": {
+        "description": "Tags to apply to the Azure Connection."
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "microsoft.web/connections",
+      "apiVersion": "2016-06-01",
+      "name": "[parameters('name')]",
+      "location": "[resourceGroup().location]",
+      "kind": "V1",
+      "properties": {
+        "displayName": "[parameters('displayName')]",
+        "api": {
+          "name": "outlook",
+          "displayName": "Outlook.com",
+          "description": "Outlook.com connector allows you to manage your mail, calendars, and contacts. You can perform various actions such as send mail, schedule meetings, add contacts, etc.",
+          "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1718/1.0.1718.3944/outlook/icon.png')]",
+          "brandColor": "#0078D4",
+          "id": "[concat(subscription().id,'/providers/Microsoft.Web/locations/',resourceGroup().location,'/managedApis/outlook')]",
+          "type": "Microsoft.Web/locations/managedApis"
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "connectionId": {
+      "type": "String",
+      "value": "[resourceId('Microsoft.Web/connections', parameters('name'))]"
+    },
+    "managedApiId": {
+      "type": "String",
+      "value": "[reference(resourceId('Microsoft.Web/connections', parameters('name')),'2016-06-01', 'full').properties.api.id]"
+    }
+  }
+}

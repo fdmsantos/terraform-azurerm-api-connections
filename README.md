@@ -37,6 +37,7 @@ Dynamic Terraform Module to Create Azure API Connections.
 | Sharepoint Online | sharepointonline          |                                     |
 | Office 365        | office365                 |                                     |
 | Planner           | planner                   |                                     |
+| Outlook.com       | outlook                   |                                     |
 
 ## How to Use
 
@@ -78,6 +79,7 @@ module "sharepointonline" {
 - [sharepointonline](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/sharepointonline) - Creates an api connection to sharepoint.
 - [office365](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/office365) - Creates an api connection to Office 365.
 - [planner](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/planner) - Creates an api connection to Microsoft Planner.
+- [outlook.com](https://github.com/fdmsantos/terraform-azurerm-api-connections/tree/main/examples/outlook) - Creates an api connection to Microsoft Outlook.com.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -3,7 +3,7 @@ variable "api_type" {
   type        = string
   validation {
     error_message = "Please choose a supported Managed API!"
-    condition     = contains(["azureblob", "sharepointonline", "office365", "planner"], var.api_type)
+    condition     = contains(["azureblob", "sharepointonline", "office365", "planner", "outlook"], var.api_type)
   }
 }
 
