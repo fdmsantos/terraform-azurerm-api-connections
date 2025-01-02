@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.3.0...v1.4.0) (2025-01-02)
+
+
+### Features
+
+* Add outlook.com api connection ([30f6544](https://github.com/fdmsantos/terraform-azurerm-api-connections/commit/30f65445de6e97369042597f1056a76ed209f505))
+
 ## [1.3.0](https://github.com/fdmsantos/terraform-azurerm-api-connections/compare/v1.2.0...v1.3.0) (2024-05-23)
 
 
